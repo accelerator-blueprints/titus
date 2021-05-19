@@ -1,0 +1,14 @@
+version: 1.0
+runtime: nodejs12
+build:
+  commands:
+    pre-build:
+      - npm i
+    build:
+      - npm run build:all
+    post-build:
+      - npm run create:env
+run:
+  command: npm run start:all
+  network:
+    port: 3000
